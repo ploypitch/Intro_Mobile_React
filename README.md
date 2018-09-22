@@ -25,7 +25,7 @@ my-app/
 
 In the root project directory, you can run:
 
-### 'npm init'
+### `npm init`
 
 Install some stuff before we start
 
