@@ -25,6 +25,10 @@ my-app/
 
 In the root project directory, you can run:
 
+### 'npm init'
+
+Install some stuff before we start
+
 ### `npm run dev`
 
 Runs the app in the development mode.<br>
