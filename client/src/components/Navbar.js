@@ -4,12 +4,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import Input from '@material-ui/core/Input';
+
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
@@ -89,7 +88,8 @@ const styles = theme => ({
 class PrimarySearchAppBar extends React.Component {
   state = {
     anchorEl: null,
-    mobileMoreAnchorEl: null
+    mobileMoreAnchorEl: null,
+    searchBluestatus: false
   };
 
   handleProfileMenuOpen = event => {
@@ -113,6 +113,14 @@ class PrimarySearchAppBar extends React.Component {
     this.handleMenuClose();
     this.props.Logout(localStorage.getItem('loginSession'));
   };
+
+  onblursearchcomponent = () => {
+    this.setState({ searchBluestatus: true });
+  };
+
+  handlekeyenter = () => {};
+
+  handlesearchChange = () => {};
 
   render() {
     const { anchorEl, mobileMoreAnchorEl } = this.state;
@@ -168,19 +176,7 @@ class PrimarySearchAppBar extends React.Component {
             </Typography>
 
             <div className={classes.grow} />
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <Input
-                placeholder="Search…"
-                disableUnderline
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput
-                }}
-              />
-            </div>
+
             <div className={classes.sectionDesktop}>
               <IconButton
                 aria-owns={isMenuOpen ? 'material-appbar' : null}

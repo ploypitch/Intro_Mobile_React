@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 
 //Component
 import Navbar from '../Navbar';
+import Imagecard from '../Imagecard';
 //Redux
 import { connect } from 'react-redux';
 import { Logout } from '../../actions/authActions';
+import { Searchbar } from '../searchbar';
+import Searchfilter from '../searchfilter';
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +23,9 @@ class App extends Component {
     return (
       <div>
         <Navbar />
+        <Searchbar />
+        <Searchfilter />
+        <Imagecard />
       </div>
     );
   }

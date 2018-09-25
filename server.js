@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const Cors = require('cors');
 
@@ -31,18 +30,7 @@ mongoose
   .catch(() => console.log('Cant Connect to MongoDB'));
 
 app.use(Cors(corOptions));
-app.use(
-  session({
-    name: 'sessionAuth',
-    secret: 'thisisadogandcat',
-    resave: true,
-    saveUninitialized: true,
-    cookie: {
-      secure: true,
-      maxAge: 24 * 60 * 60 * 1000
-    }
-  })
-);
+app.use(express.static('./upload'));
 
 // Use Route
 app.use('/api/items', items);

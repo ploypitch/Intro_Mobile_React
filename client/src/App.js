@@ -10,8 +10,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <PrivateRoute path="/Admin" exact component={Adminform} />
-        <PrivateRoute path="/Home" exact component={Homepage} />
+        <PrivateRoute path="/admin" exact component={Adminform} />
+        <PrivateRoute path="/home" exact component={Homepage} />
+        <PrivateRoute path="/search" exact component={Homepage} />
         <PublicRoute path="/" exact component={Login} />
       </div>
     );

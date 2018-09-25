@@ -7,7 +7,7 @@ const Publicroute = ({ isauth, component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      !isauth ? <Component {...props} /> : <Redirect to="/Home" />
+      !isauth ? <Component {...props} /> : <Redirect to="/home" />
     }
   />
 );
